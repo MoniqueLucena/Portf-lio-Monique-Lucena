@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body{
+	background: #B90109;
+	font-family: "Dancing Script";
+}
+
+.frame {
+	position: absolute;
+	background-color: #DBC8C5;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 500px;
+	margin-top: -200px;
+	margin-left: -200px;
+	box-shadow: 8px 16px 16px rgba(0, 0, 0, 185);
+}
+
+.frame, .card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flip-me {
+	position: absolute;
+	top: 30%;
+	left: 77%;
+	font-size: 20px;
+	transform: rotate(-90deg);
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.front h1 {
+	font-family: Dancing Script, cursive;
+	font-size: 100px;
+	margin: 16px 80px;
+	color: #DBC8C5;
+}
+
+/* faz virar */
+.card:hover .flip{
+	transform: rotateX(180deg) translate3d(0, 0, 0);
+	box-shadow: 50px -10px 50px 0 rgba(0, 0, 0, 0.5);
+}
+
+.flip {
+	transform-style: preserve-3d;
+	transition: all 0.7s ease-in-out;
+	perspective: 1000px;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	width: 100%;
+	height: 300%;
+	background: grey;
+}
+
+.card .back {
+	transform: rotateX(-180deg);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.back {
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.back h3 {
+	font-size: 40px;
+	margin: 15px;
+	color: #B90109;
+}
+
+.back h2 {
+	color: white;
+	font-family: Dancing Script, cursive;
+	font-weight: 300;
+	font-size: 25px;
+	margin: 32px;
+}
+
+img {
+	width: 35px;
+}
+
+img:hover {
+	width: 46px;
+	cursor: pointer;
+}
